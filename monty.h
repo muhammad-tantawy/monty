@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
-#include <ctype.h>
+#include <ctype.h>;
 /**
  ** struct stack_s - doubly linked list representation of a stack (or queue)
  ** @n: integer
@@ -46,10 +46,10 @@ typedef struct instruction_s
  **/
 typedef struct bus_s
 {
-		char *arg;
-			FILE *file;
-				char *content;
-					int lifi;
+	char *arg;
+	FILE *file;
+	char *content;
+	int lifi;
 }  bus_t;
 extern bus_t bus;
 
@@ -57,6 +57,8 @@ extern bus_t bus;
 /**
  * prototypes used
  */
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 char  *clean_line(char *content);
