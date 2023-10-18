@@ -1,17 +1,24 @@
 #include "monty.h"
+#define _POSIX_C_SOURCE 200809L
 bus_t bus = {NULL, NULL, NULL, 0};
-
-int main(int argc , char *argv[])
+/**
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
+* Return: 0 on success
+*/
+int main(int argc, char *argv[])
 {
 	char *content;
 	FILE *file;
 	size_t size = 0;
-	size_t read_line = 1;
+	ssize_t read_line = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
-	if (argc!= 2)
+
+	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file \n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
@@ -35,6 +42,5 @@ int main(int argc , char *argv[])
 	}
 	free_stack(stack);
 	fclose(file);
-	return (0);
+return (0);
 }
-
